@@ -48,21 +48,22 @@ export function HeroPortrait() {
         onMouseLeave={() => setIsHovered(false)}
         onTouchMove={handleTouchMove}
         onTouchStart={() => setIsHovered(true)}
-        className="relative z-10 w-[250px] xs:w-[290px] sm:w-[380px] lg:w-[460px] xl:w-[520px] h-[330px] xs:h-[380px] sm:h-[480px] lg:h-[570px] xl:h-[630px] cursor-pointer overflow-hidden touch-pan-y"
+        className="relative z-10 w-[260px] xs:w-[300px] sm:w-[380px] lg:w-[460px] xl:w-[500px] aspect-[3/4] cursor-pointer overflow-hidden touch-pan-y"
         style={{
-          maskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
         }}
       >
         {/* BASE: Black & White Transparent Portrait (Default state) */}
         <div className="absolute inset-0 w-full h-full flex items-end justify-center pointer-events-none">
           <Image
             src="/nagesh-cutout-bw.png"
-            alt="Nagesha R - Transparent Monochrome Cutout"
-            width={682}
-            height={1024}
+            alt="Nagesha R - High-Definition Monochrome Cutout"
+            width={1086}
+            height={1448}
             priority
-            className="w-full h-full object-cover object-top"
+            quality={95}
+            className="w-full h-full object-contain object-bottom select-none drop-shadow-xl"
           />
         </div>
 
@@ -77,11 +78,12 @@ export function HeroPortrait() {
         >
           <Image
             src="/nagesh-cutout-color.png"
-            alt="Nagesha R - Transparent Color Cutout"
-            width={682}
-            height={1024}
+            alt="Nagesha R - High-Definition Color Cutout"
+            width={1086}
+            height={1448}
             priority
-            className="w-full h-full object-cover object-top"
+            quality={95}
+            className="w-full h-full object-contain object-bottom select-none drop-shadow-xl"
           />
         </div>
       </div>

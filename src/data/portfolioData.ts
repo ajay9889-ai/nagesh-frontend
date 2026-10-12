@@ -2,12 +2,12 @@ import { Project, SkillGroup, ExperienceItem, ProfileData, LiveProject } from "@
 
 export const PROFILE: ProfileData = {
   name: "Nagesha R",
-  role: "Full-Stack Developer | Machine Learning · Deep Learning · LLMs · RAG · Agentic AI Systems",
+  role: "Full-Stack Developer & Node.js Backend Engineer | Machine Learning · Deep Learning · LLMs · RAG · Agentic AI Systems",
   location: "Bangalore, India",
   headline: "Nagesha R",
-  subtext: "Software engineer with hands-on, production experience spanning machine learning, deep learning, LLM engineering, retrieval-augmented generation (RAG), agentic AI workflows, and full-stack backend systems.",
-  about: "Software engineer who turns unfamiliar concepts into deployed, production systems / across PyTorch, LangGraph, LLM engineering, and full-stack backends.",
-  aboutSupport: "Core founding engineer intern at Brikup Technologies. Architect of production RAG systems, multi-agent analytics platforms, and transformer models from scratch.",
+  subtext: "Software engineer with hands-on, production experience spanning Node.js backend systems, scalable REST APIs, machine learning, deep learning, LLM engineering, RAG, and agentic AI workflows.",
+  about: "Software engineer who turns unfamiliar concepts into deployed, production systems / across Node.js backends, PyTorch, LangGraph, LLM engineering, and cloud infrastructure.",
+  aboutSupport: "Core founding engineer intern at Brikup Technologies. Architect of production Node.js services, multi-agent analytics platforms, and transformer models from scratch.",
   email: process.env.NEXT_PUBLIC_OWNER_EMAIL || "nagesha2r@gmail.com",
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/nageshram",
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/in/nageshram2003",
