@@ -7,17 +7,17 @@ import { HeroPortrait } from './HeroPortrait';
 
 export function HeroSection() {
   return (
-    <section className="relative w-full h-[100dvh] max-h-[100dvh] flex items-center px-6 sm:px-10 lg:px-12 xl:px-16 max-w-[1440px] mx-auto overflow-hidden">
+    <section className="relative w-full h-[100dvh] max-h-[100dvh] flex items-center pl-6 sm:pl-10 lg:pl-12 xl:pl-16 pr-0 overflow-hidden">
       
-      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-8 w-full h-full my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-4 w-full h-full my-auto">
         
-        {/* Left Column: Bold, simple, clean headline + subtitle + buttons (Col 6) */}
-        <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left space-y-6 sm:space-y-8 z-10 py-4 max-w-xl">
+        {/* Left Column: Bold, simple, clean headline + subtitle + buttons (Col 7) */}
+        <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center text-left space-y-6 sm:space-y-7 z-10 py-4 max-w-2xl">
           
-          {/* Monumental Headline: Syne ExtraBold 800 - Exactly Two Lines */}
-          <h1 className="font-display font-extrabold text-[clamp(2.6rem,4.8vw,5.25rem)] tracking-[-0.035em] text-ink leading-[0.96] select-none">
-            I build things<br />
-            that <span className="text-[#2563EB] dark:text-[#3B82F6]">work.</span>
+          {/* Monumental Headline: Syne ExtraBold 800 - BIG Exactly Two Lines */}
+          <h1 className="font-display font-extrabold text-[clamp(3.25rem,6.4vw,6.75rem)] tracking-[-0.04em] text-ink leading-[0.91] select-none">
+            <span className="block whitespace-nowrap">I build things</span>
+            <span className="block whitespace-nowrap">that <span className="text-[#2563EB] dark:text-[#3B82F6]">work.</span></span>
           </h1>
 
           {/* Clean, single-line subtitle */}
@@ -45,8 +45,8 @@ export function HeroSection() {
 
         </div>
 
-        {/* Right Column: Prominent, Centered Portrait Image (Col 6) */}
-        <div className="lg:col-span-6 xl:col-span-6 flex items-end justify-center relative h-full">
+        {/* Right Column: Prominent Portrait Immersed to Right Edge (Col 5) */}
+        <div className="lg:col-span-5 xl:col-span-5 flex items-end justify-end relative h-full pr-0 mr-0">
           <HeroPortrait />
         </div>
 

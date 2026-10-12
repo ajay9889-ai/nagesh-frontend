@@ -33,20 +33,20 @@ export function HeroPortrait() {
   const revealMask = `radial-gradient(circle 320px at ${mousePos.x}px ${mousePos.y}px, black 45%, rgba(0,0,0,0.5) 75%, transparent 100%)`;
 
   return (
-    <div className="relative w-full h-full flex items-end justify-center select-none">
-      {/* 1. Behind: Soft Ambient Electric Blue Spotlight Halo centered directly behind portrait */}
+    <div className="relative w-full h-full flex items-end justify-end select-none pr-0 mr-0">
+      {/* 1. Behind: Soft Ambient Electric Blue Spotlight Halo aligned to portrait */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] xs:w-[420px] sm:w-[500px] lg:w-[580px] xl:w-[660px] h-[340px] xs:h-[420px] sm:h-[500px] lg:h-[580px] xl:h-[660px] rounded-full bg-gradient-to-tr from-blue-600/30 via-sky-400/20 to-transparent border border-blue-400/25 dark:from-[#0B1A3D]/95 dark:via-[#081229]/80 dark:to-transparent dark:border-blue-500/20 blur-[2px] pointer-events-none transition-colors duration-400"
+        className="absolute top-1/2 right-[2%] sm:right-[6%] lg:right-[8%] -translate-y-1/2 w-[380px] xs:w-[460px] sm:w-[540px] lg:w-[640px] xl:w-[740px] h-[380px] xs:h-[460px] sm:h-[540px] lg:h-[640px] xl:h-[740px] rounded-full bg-gradient-to-tr from-blue-600/30 via-sky-400/20 to-transparent border border-blue-400/25 dark:from-[#0B1A3D]/95 dark:via-[#081229]/80 dark:to-transparent dark:border-blue-500/20 blur-[2px] pointer-events-none transition-colors duration-400"
       />
 
       {/* Ambient soft blue glow */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] sm:w-[520px] lg:w-[640px] h-[380px] sm:h-[520px] lg:h-[640px] bg-blue-500/15 dark:bg-blue-500/20 blur-[120px] rounded-full pointer-events-none"
+        className="absolute top-1/2 right-[2%] sm:right-[6%] lg:right-[8%] -translate-y-1/2 w-[420px] sm:w-[580px] lg:w-[700px] h-[420px] sm:h-[580px] lg:h-[700px] bg-blue-500/15 dark:bg-blue-500/20 blur-[130px] rounded-full pointer-events-none"
       />
 
-      {/* 2. Center: Prominent High-Definition Portrait - Fully Visible & Centered */}
+      {/* 2. Center: Prominent High-Definition Portrait - Immersed to right side */}
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
@@ -54,10 +54,10 @@ export function HeroPortrait() {
         onMouseLeave={() => setIsHovered(false)}
         onTouchMove={handleTouchMove}
         onTouchStart={() => setIsHovered(true)}
-        className="relative z-10 h-[72vh] xs:h-[78vh] sm:h-[82vh] lg:h-[86vh] xl:h-[90vh] max-h-[640px] xs:max-h-[720px] sm:max-h-[820px] lg:max-h-[880px] xl:max-h-[960px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y"
+        className="relative z-10 h-[75vh] xs:h-[80vh] sm:h-[85vh] lg:h-[90vh] xl:h-[94vh] max-h-[680px] xs:max-h-[760px] sm:max-h-[860px] lg:max-h-[960px] xl:max-h-[1040px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y translate-x-[3%] sm:translate-x-[4%] lg:translate-x-[5%]"
         style={{
-          maskImage: 'linear-gradient(to bottom, black 92%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 92%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 94%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 94%, transparent 100%)',
         }}
       >
         {/* BASE: Black & White Transparent Portrait (Default state) */}
@@ -95,7 +95,7 @@ export function HeroPortrait() {
       </div>
 
       {/* 3. Cursive Script Signature: Nagesha R */}
-      <div className="absolute bottom-2 right-2 sm:right-6 lg:right-4 xl:right-8 z-20 pointer-events-none -rotate-6">
+      <div className="absolute bottom-2 right-4 sm:right-8 lg:right-10 xl:right-12 z-20 pointer-events-none -rotate-6">
         <span className="font-signature text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-ink/90 dark:text-white/95 font-medium tracking-wide drop-shadow-md">
           Nagesha R
         </span>
