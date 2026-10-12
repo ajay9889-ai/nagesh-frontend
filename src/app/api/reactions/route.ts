@@ -1,0 +1,53 @@
+import { NextRequest, NextResponse } from "next/server";
+
+// In-memory store for instantaneous reaction counts
+const reactionsStore: Record<string, Record<string, number>> = {
+  "ai-business-analyst": { "🔥": 48, "🚀": 65, "💡": 34, "❤️": 42 },
+  "production-rag-system": { "🔥": 52, "🚀": 58, "💡": 41, "❤️": 39 },
+  "gpt-from-scratch": { "🔥": 61, "🚀": 44, "💡": 55, "❤️": 36 },
+  "startup-station": { "🔥": 29, "🚀": 38, "💡": 22, "❤️": 27 },
+};
+
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const slug = searchParams.get("slug");
+
+  if (slug) {
+    if (!reactionsStore[slug]) {
+      reactionsStore[slug] = { "🔥": 14, "🚀": 22, "💡": 11, "❤️": 18 };
+    }
+    return NextResponse.json({ success: true, reactions: reactionsStore[slug] });
+  }
+
+  return NextResponse.json({ success: true, reactions: reactionsStore });
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const { slug, emoji } = await req.json();
+
+    if (!slug || !emoji) {
+      return NextResponse.json(
+        { success: false, error: "slug and emoji are required" },
+        { status: 400 }
+      );
+    }
+
+    if (!reactionsStore[slug]) {
+      reactionsStore[slug] = { "🔥": 0, "🚀": 0, "💡": 0, "❤️": 0 };
+    }
+
+    reactionsStore[slug][emoji] = (reactionsStore[slug][emoji] || 0) + 1;
+
+    return NextResponse.json({
+      success: true,
+      reactions: reactionsStore[slug],
+      total: Object.values(reactionsStore[slug]).reduce((a, b) => a + b, 0),
+    });
+  } catch (err: any) {
+    return NextResponse.json(
+      { success: false, error: err.message || "Failed to record reaction" },
+      { status: 500 }
+    );
+  }
+}

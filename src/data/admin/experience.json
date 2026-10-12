@@ -1,0 +1,49 @@
+{
+  "experience": [
+    {
+      "id": "brikup-founding",
+      "role": "Software Engineer Intern (Part of Core Founding Team)",
+      "company": "Brikup Technologies Pvt. Ltd.",
+      "period": "Feb 2026 – Jul 2026",
+      "location": "Bangalore, India",
+      "type": "Internship",
+      "highlights": [
+        "Designed and developed a production Flutter application with a Node.js/Express backend, owning features end-to-end across application, API, database, and deployment layers.",
+        "Architected REST APIs, scalable data models, authentication, caching, and asynchronous processing to ensure reliable product operation at scale.",
+        "Built analytics dashboards and intent-tracking workflows to capture and process user behavior, enabling data-driven product decisions.",
+        "Deployed application infrastructure on AWS and implemented CI/CD pipelines using GitHub Actions with CloudFront integration for continuous delivery.",
+        "Integrated AI/LLM capabilities into core product workflows, owning the full lifecycle from requirements and architecture through coding, testing, deployment, and optimization."
+      ],
+      "technologies": ["Flutter", "Node.js", "Express.js", "AWS", "GitHub Actions", "CloudFront", "REST APIs", "AI/LLM Integration"],
+      "order": 0
+    },
+    {
+      "id": "mca-bmsit",
+      "role": "Master of Computer Applications (MCA)",
+      "company": "BMS Institute of Technology & Management",
+      "period": "Feb 2024 – Sep 2025",
+      "location": "Yelahanka, Bangalore, India",
+      "type": "Education",
+      "highlights": [
+        "Graduated with 9.18 / 10 CGPA.",
+        "Specialized in Advanced Algorithms, Machine Learning, Deep Learning, Cloud Architecture, and Distributed Systems."
+      ],
+      "technologies": ["Python", "PyTorch", "Transformers", "LangGraph", "FastAPI", "PostgreSQL", "Docker"],
+      "order": 1
+    },
+    {
+      "id": "bsc-ucs",
+      "role": "B.Sc. — Computer Science, Mathematics & Physics",
+      "company": "University College of Science",
+      "period": "Jan 2021 – Sep 2023",
+      "location": "Tumkur, Karnataka, India",
+      "type": "Education",
+      "highlights": [
+        "Graduated with 8.61 / 10 CGPA.",
+        "Rigorous coursework in Computer Science, Discrete Mathematics, Linear Algebra, and Statistical Physics."
+      ],
+      "technologies": ["C", "Java", "Python", "Data Structures", "DBMS", "Operating Systems"],
+      "order": 2
+    }
+  ]
+}

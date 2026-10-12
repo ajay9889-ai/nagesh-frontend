@@ -1,0 +1,100 @@
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { addContact } from "@/lib/adminData";
+
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { name, email, message } = body;
+
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { success: false, error: "Please provide your name, email, and message." },
+        { status: 400 }
+      );
+    }
+
+    // 1. Instantly persist to admin store
+    try {
+      addContact({ name, email, subject: "Portfolio Contact", message });
+    } catch (storeErr) {
+      console.error("[Contact Form] Failed to save contact to admin store:", storeErr);
+    }
+
+    // SMTP Credentials
+    const smtpUser = process.env.SMTP_USER || "nagesha2r@gmail.com";
+    const smtpPass = process.env.SMTP_PASS;
+    const notifyEmail = process.env.OWNER_NOTIFY_EMAIL || "nagesha2r@gmail.com";
+
+    let emailSent = false;
+
+    // 2. Send Gmail notification if credentials provided
+    if (smtpUser && smtpPass) {
+      try {
+        const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
+          },
+        });
+
+        const htmlBody = `
+          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 580px; margin: 0 auto; background: #0E0E12; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; overflow: hidden; color: #ECEBE7;">
+            <div style="background: linear-gradient(135deg, #FF5500, #FF7A00); padding: 24px 28px;">
+              <h2 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 700;">📬 New Message for Nagesha R</h2>
+            </div>
+            <div style="padding: 28px;">
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                  <td style="padding: 8px 0; color: #8B8B95; font-size: 13px; width: 70px;">From:</td>
+                  <td style="padding: 8px 0; color: #ffffff; font-size: 14px; font-weight: 600;">${name}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #8B8B95; font-size: 13px;">Email:</td>
+                  <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #FF7A00; text-decoration: none; font-size: 14px;">${email}</a></td>
+                </tr>
+              </table>
+              <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 18px;">
+                <p style="margin: 0; color: #E0E0E8; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</p>
+              </div>
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <p style="margin: 0; color: #666; font-size: 12px; font-family: monospace;">
+                  Received at ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+
+        await transporter.sendMail({
+          from: `"Nagesha Portfolio" <${smtpUser}>`,
+          to: notifyEmail,
+          replyTo: email,
+          subject: `💬 New Message from ${name} (${email})`,
+          html: htmlBody,
+        });
+
+        emailSent = true;
+      } catch (mailErr) {
+        console.error("[Contact Form] Nodemailer error:", mailErr);
+      }
+    }
+
+    return NextResponse.json({
+      success: true,
+      emailSent,
+      message: `Thank you, ${name}! Your message was successfully received. I typically respond within 24 hours.`,
+      data: {
+        id: "msg_" + Math.random().toString(36).substring(2, 10),
+        receivedAt: new Date().toISOString(),
+      },
+    });
+  } catch (err: any) {
+    console.error("Contact API Error:", err);
+    return NextResponse.json(
+      { success: false, error: err.message || "Failed to process message." },
+      { status: 500 }
+    );
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "id": "c_init_1",
+      "name": "Arjun Sharma",
+      "email": "arjun.sharma@techventure.ai",
+      "subject": "AI Engineering Role",
+      "message": "Hi Nagesha, we came across your AI Business Analyst and RAG system architectures and would love to discuss a Senior AI Engineer opportunity at our team.",
+      "createdAt": "2026-10-12T08:00:00.000Z",
+      "read": true,
+      "archived": false
+    }
+  ]
+}

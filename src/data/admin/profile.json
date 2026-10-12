@@ -1,0 +1,19 @@
+{
+  "profile": {
+    "name": "Nagesha R",
+    "title": "Full-Stack Developer | Machine Learning · Deep Learning · LLMs · RAG · Agentic AI Systems",
+    "tagline": "Software engineer with hands-on, production experience spanning machine learning, deep learning, LLM engineering, retrieval-augmented generation (RAG), agentic AI workflows, and full-stack backend systems.",
+    "bio": "Software engineer with hands-on, production experience spanning ML, deep learning, LLM engineering, RAG, agentic AI workflows, and full-stack backend systems. Core founding engineer intern at Brikup Technologies.",
+    "location": "Bangalore, India",
+    "availability": "Available for full-time engineering roles, AI projects & collaborations",
+    "email": "nagesha2r@gmail.com",
+    "github": "https://github.com/nageshram",
+    "linkedin": "https://linkedin.com/in/nageshram2003",
+    "stats": [
+      { "label": "MCA CGPA", "value": "9.18" },
+      { "label": "B.Sc. CGPA", "value": "8.61" },
+      { "label": "Projects Built", "value": "4+" },
+      { "label": "Available", "value": "Now" }
+    ]
+  }
+}

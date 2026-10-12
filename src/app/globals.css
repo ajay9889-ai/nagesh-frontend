@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default: Crisp Editorial Light Theme */
+  --color-bg: #F5F4F0;
+  --color-ink: #121216;
+  --color-text: #121216;
+  --color-muted: #6B6A75;
+  --color-line: rgba(18, 18, 22, 0.08);
+  --color-accent: #F95700;
+  --color-accent-glow: rgba(249, 87, 0, 0.25);
+}
+
+[data-theme="light"] {
+  --color-bg: #F5F4F0;
+  --color-ink: #121216;
+  --color-text: #121216;
+  --color-muted: #6B6A75;
+  --color-line: rgba(18, 18, 22, 0.08);
+  --color-accent: #F95700;
+  --color-accent-glow: rgba(249, 87, 0, 0.25);
+}
+
+[data-theme="dark"] {
+  --color-bg: #0E0E12;
+  --color-ink: #ECEBE7;
+  --color-text: #ECEBE7;
+  --color-muted: #8B8B95;
+  --color-line: rgba(236, 235, 231, 0.09);
+  --color-accent: #FF7A00;
+  --color-accent-glow: rgba(255, 122, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 400ms cubic-bezier(0.16, 1, 0.3, 1), color 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hairline borders */
+.hairline-b {
+  border-bottom: 1px solid var(--color-line);
+}
+.hairline-t {
+  border-top: 1px solid var(--color-line);
+}
+.hairline-l {
+  border-left: 1px solid var(--color-line);
+}
+
+/* Accent focus outlines */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Work row ink-fill hover */
+.work-row {
+  position: relative;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-ink);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 380ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.work-row:hover::before {
+  transform: scaleY(1);
+}
+
+.work-row:hover {
+  color: var(--color-bg);
+}
+
+.work-row:hover .work-text-invert {
+  color: var(--color-bg);
+}
+
+.work-row:hover .work-muted-invert {
+  color: var(--color-bg);
+  opacity: 0.75;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Accent selection tint */
+::selection {
+  background-color: var(--color-accent);
+  color: #0E0E12;
+}
+
+/* Voice Agent Circle & Orb Keyframe Animations - Radiant Orange */
+@keyframes voice-orb-breathe {
+  0%, 100% {
+    transform: scale(0.97);
+    filter: drop-shadow(0 0 25px rgba(255, 107, 0, 0.45));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 50px rgba(255, 122, 0, 0.75));
+  }
+}
+
+@keyframes voice-orb-speaking {
+  0% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 35px rgba(255, 107, 0, 0.65));
+  }
+  25% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 65px rgba(245, 158, 11, 0.85));
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 45px rgba(255, 107, 0, 0.75));
+  }
+  75% {
+    transform: scale(1.16);
+    filter: drop-shadow(0 0 75px rgba(251, 146, 60, 0.9));
+  }
+  100% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 35px rgba(255, 107, 0, 0.65));
+  }
+}
+
+@keyframes voice-ripple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+@keyframes voice-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes wave-bounce {
+  0%, 100% { height: 6px; }
+  50% { height: 28px; }
+}
+
+.animate-voice-breathe {
+  animation: voice-orb-breathe 4s ease-in-out infinite;
+}
+
+.animate-voice-speaking {
+  animation: voice-orb-speaking 1.2s ease-in-out infinite;
+}
+
+.animate-voice-spin {
+  animation: voice-rotate 8s linear infinite;
+}
+
+.animate-voice-ripple-1 {
+  animation: voice-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-voice-ripple-2 {
+  animation: voice-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite 0.8s;
+}
+
+.animate-voice-ripple-3 {
+  animation: voice-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.6s;
+}
+
+/* Hide scrollbars completely across all modern browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+@keyframes cloud-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+}
+
+.animate-cloud-float {
+  animation: cloud-float 4s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * AI ASSISTANT WIDGET ANIMATIONS & ACCESSIBILITY
+ * ───────────────────────────────────────────────────────────────────────────── */
+@keyframes launcher-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+@keyframes sonar-wave {
+  0% { transform: scale(1); opacity: 0.75; }
+  60% { opacity: 0.25; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  35%, 100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+@keyframes spin-conic {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pill-entry {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes breath-ring {
+  0%, 100% { transform: scale(0.98); opacity: 0.3; }
+  50% { transform: scale(1.08); opacity: 0.7; }
+}
+
+.animate-launcher-pulse {
+  animation: launcher-pulse 4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.animate-sonar-1 {
+  animation: sonar-wave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-sonar-2 {
+  animation: sonar-wave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.5s;
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 4s ease-in-out infinite;
+}
+
+.animate-spin-conic {
+  animation: spin-conic 6s linear infinite;
+}
+
+.animate-pill-entry {
+  animation: pill-entry 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-breath-ring {
+  animation: breath-ring 3s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * CHAT TYPING ANIMATIONS
+ * ───────────────────────────────────────────────────────────────────────────── */
+@keyframes typing-dot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.animate-typing-dot-1 {
+  animation: typing-dot 1.2s ease-in-out infinite;
+}
+
+.animate-typing-dot-2 {
+  animation: typing-dot 1.2s ease-in-out infinite 0.2s;
+}
+
+.animate-typing-dot-3 {
+  animation: typing-dot 1.2s ease-in-out infinite 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-launcher-pulse,
+  .animate-sonar-1,
+  .animate-sonar-2,
+  .animate-shimmer-sweep,
+  .animate-spin-conic,
+  .animate-voice-breathe,
+  .animate-voice-speaking,
+  .animate-voice-spin,
+  .animate-voice-ripple-1,
+  .animate-voice-ripple-2,
+  .animate-voice-ripple-3,
+  .animate-cloud-float,
+  .animate-breath-ring {
+    animation: none !important;
+  }
+}
+

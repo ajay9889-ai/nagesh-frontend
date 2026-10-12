@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": "ai-business-analyst",
+      "title": "AI Business Analyst",
+      "slug": "ai-business-analyst",
+      "badge": "Production Agentic AI ⚡",
+      "tagline": "8 LangGraph tool-calling agents with structured outputs, hybrid RAG knowledge layer, and automated business KPI profiling.",
+      "description": "A production AI analyst that ingests CSV/XLSX business data, automatically profiles datasets, computes KPIs, detects trends and anomalies, finds correlations, and answers business questions through 8 LangGraph tool-calling agents with structured outputs.",
+      "category": "Agentic AI & Analytics",
+      "technologies": ["Python", "FastAPI", "LangGraph", "RAG", "PostgreSQL", "ChromaDB", "OpenAI"],
+      "featured": true,
+      "metrics": [
+        { "label": "Architecture", "value": "8 LangGraph Agents" },
+        { "label": "Reasoning", "value": "GPT-4o-mini + RRF" }
+      ],
+      "githubUrl": "https://github.com/nageshram",
+      "liveUrl": "",
+      "order": 0
+    },
+    {
+      "id": "production-rag-system",
+      "title": "Production RAG System",
+      "slug": "production-rag-system",
+      "badge": "Enterprise Hybrid Search ⚡",
+      "tagline": "End-to-end document Q&A pipeline with Gemini embeddings, ChromaDB, BM25 hybrid search, and RRF re-ranking.",
+      "description": "Production document Q&A system featuring PDF/DOCX ingestion, recursive chunking, ChromaDB vector storage, BM25 hybrid search, and SSE streaming.",
+      "category": "LLM Engineering & RAG",
+      "technologies": ["Python", "FastAPI", "PyTorch", "Gemini Embeddings", "BM25", "ChromaDB", "Docker"],
+      "featured": true,
+      "metrics": [
+        { "label": "Retrieval", "value": "BM25 + Dense + RRF" },
+        { "label": "Streaming", "value": "Token SSE" }
+      ],
+      "githubUrl": "https://github.com/nageshram",
+      "liveUrl": "",
+      "order": 1
+    },
+    {
+      "id": "gpt-from-scratch",
+      "title": "GPT From Scratch",
+      "slug": "gpt-from-scratch",
+      "badge": "Deep Learning / PyTorch 🧠",
+      "tagline": "Decoder-only Transformer implemented from first principles in PyTorch with custom multi-head attention and training loops.",
+      "description": "Pure PyTorch implementation of a GPT decoder-only Transformer with causal masked self-attention and empirical training loops.",
+      "category": "Deep Learning",
+      "technologies": ["Python", "PyTorch", "Transformers", "Neural Networks", "NLP"],
+      "featured": true,
+      "metrics": [
+        { "label": "Implementation", "value": "Pure PyTorch" },
+        { "label": "Attention", "value": "Masked Multi-Head" }
+      ],
+      "githubUrl": "https://github.com/nageshram",
+      "liveUrl": "",
+      "order": 2
+    },
+    {
+      "id": "startup-station",
+      "title": "Startup Station",
+      "slug": "startup-station",
+      "badge": "Full-Stack SaaS 🚀",
+      "tagline": "Multi-tenant startup management SaaS with role-based dashboards, investor tracking, and JWT authentication.",
+      "description": "Comprehensive startup management SaaS enabling founders to manage teams, tasks, documents, and investor relations with role-based dashboards.",
+      "category": "Full Stack",
+      "technologies": ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT"],
+      "featured": true,
+      "metrics": [
+        { "label": "Architecture", "value": "Multi-tenant" },
+        { "label": "Auth", "value": "JWT + RBAC" }
+      ],
+      "githubUrl": "https://github.com/nageshram",
+      "liveUrl": "",
+      "order": 3
+    }
+  ]
+}
