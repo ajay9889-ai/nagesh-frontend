@@ -30,23 +30,23 @@ export function HeroPortrait() {
   }, []);
 
   // Soft feathered reveal mask that illuminates full color wherever the cursor/finger moves
-  const revealMask = `radial-gradient(circle 220px at ${mousePos.x}px ${mousePos.y}px, black 35%, rgba(0,0,0,0.5) 65%, transparent 100%)`;
+  const revealMask = `radial-gradient(circle 320px at ${mousePos.x}px ${mousePos.y}px, black 40%, rgba(0,0,0,0.5) 70%, transparent 100%)`;
 
   return (
-    <div className="relative w-full max-w-md mx-auto flex items-center justify-center select-none py-1">
+    <div className="relative w-full h-full flex items-center justify-center lg:justify-end select-none">
       {/* 1. Behind: Soft Ambient Electric Blue Spotlight Halo */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] xs:w-[300px] sm:w-[360px] lg:w-[420px] h-[260px] xs:h-[300px] sm:h-[360px] lg:h-[420px] rounded-full bg-gradient-to-tr from-blue-600/25 via-sky-400/15 to-transparent border border-blue-400/25 dark:from-[#0B1A3D]/90 dark:via-[#081229]/70 dark:to-transparent dark:border-blue-500/20 blur-[2px] pointer-events-none transition-colors duration-400"
+        className="absolute top-1/2 left-1/2 lg:left-auto lg:right-[8%] -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[380px] xs:w-[460px] sm:w-[560px] lg:w-[680px] xl:w-[780px] h-[380px] xs:h-[460px] sm:h-[560px] lg:h-[680px] xl:h-[780px] rounded-full bg-gradient-to-tr from-blue-600/30 via-sky-400/20 to-transparent border border-blue-400/25 dark:from-[#0B1A3D]/95 dark:via-[#081229]/80 dark:to-transparent dark:border-blue-500/20 blur-[2px] pointer-events-none transition-colors duration-400"
       />
 
       {/* Ambient soft blue glow */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[420px] h-[300px] sm:h-[420px] bg-blue-500/10 dark:bg-blue-500/15 blur-[90px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 lg:left-auto lg:right-[8%] -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[420px] sm:w-[580px] lg:w-[720px] h-[420px] sm:h-[580px] lg:h-[720px] bg-blue-500/15 dark:bg-blue-500/20 blur-[120px] rounded-full pointer-events-none"
       />
 
-      {/* 2. Center: Interactive Transparent Portrait */}
+      {/* 2. Center: Prominent High-Definition Portrait (Fits Screen Viewport) */}
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
@@ -54,10 +54,10 @@ export function HeroPortrait() {
         onMouseLeave={() => setIsHovered(false)}
         onTouchMove={handleTouchMove}
         onTouchStart={() => setIsHovered(true)}
-        className="relative z-10 w-[240px] xs:w-[270px] sm:w-[310px] lg:w-[340px] xl:w-[380px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y"
+        className="relative z-10 h-[62vh] xs:h-[68vh] sm:h-[74vh] lg:h-[82vh] xl:h-[86vh] max-h-[560px] xs:max-h-[640px] sm:max-h-[740px] lg:max-h-[840px] xl:max-h-[940px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y"
         style={{
-          maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 92%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 92%, transparent 100%)',
         }}
       >
         {/* BASE: Black & White Transparent Portrait (Default state) */}
@@ -94,9 +94,9 @@ export function HeroPortrait() {
         </div>
       </div>
 
-      {/* 5. Cursive Script Signature: Nagesha R */}
-      <div className="absolute bottom-2 right-2 sm:right-6 z-20 pointer-events-none -rotate-6">
-        <span className="font-signature text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-ink/90 dark:text-white/95 font-medium tracking-wide drop-shadow-md">
+      {/* 3. Cursive Script Signature: Nagesha R */}
+      <div className="absolute bottom-1 right-2 sm:right-6 lg:right-2 xl:right-6 z-20 pointer-events-none -rotate-6">
+        <span className="font-signature text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-ink/90 dark:text-white/95 font-medium tracking-wide drop-shadow-md">
           Nagesha R
         </span>
       </div>
