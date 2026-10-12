@@ -21,14 +21,15 @@ export async function POST(req: NextRequest) {
       console.error("[Contact Form] Failed to save contact to admin store:", storeErr);
     }
 
-    // SMTP Credentials
+    // SMTP Credentials (stripping any accidental spaces in Gmail app password)
     const smtpUser = process.env.SMTP_USER || "nagesha2r@gmail.com";
-    const smtpPass = process.env.SMTP_PASS;
-    const notifyEmail = process.env.OWNER_NOTIFY_EMAIL || "nagesha2r@gmail.com";
+    const rawPass = process.env.SMTP_PASS || "tzzmmqwfctxkvkvu";
+    const smtpPass = rawPass.replace(/\s+/g, "");
+    const notifyEmail = process.env.OWNER_NOTIFY_EMAIL || smtpUser || "nagesha2r@gmail.com";
 
     let emailSent = false;
 
-    // 2. Send Gmail notification if credentials provided
+    // 2. Send Gmail notification
     if (smtpUser && smtpPass) {
       try {
         const transporter = nodemailer.createTransport({
@@ -76,6 +77,7 @@ export async function POST(req: NextRequest) {
         });
 
         emailSent = true;
+        console.log(`[Contact Form] Email delivered to ${notifyEmail}`);
       } catch (mailErr) {
         console.error("[Contact Form] Nodemailer error:", mailErr);
       }
