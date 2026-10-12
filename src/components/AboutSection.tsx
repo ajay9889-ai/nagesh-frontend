@@ -18,25 +18,25 @@ import {
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-16 sm:py-24 px-6 sm:px-10 max-w-7xl mx-auto hairline-b relative">
+    <section id="about" className="py-12 sm:py-16 px-6 sm:px-10 max-w-7xl mx-auto hairline-b relative min-h-screen flex flex-col justify-center">
       {/* Background ambient decorative glow */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/3 right-10 w-[500px] h-[300px] bg-gradient-to-br from-accent/10 via-amber-500/5 to-transparent blur-[120px] pointer-events-none rounded-full" 
+        className="absolute top-1/3 right-10 w-[500px] h-[300px] bg-gradient-to-br from-accent/10 via-rose-500/5 to-transparent blur-[120px] pointer-events-none rounded-full" 
       />
 
       {/* Section Header */}
-      <div className="mb-12 sm:mb-16">
+      <div className="mb-8 sm:mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium mb-3">
           <Sparkles className="w-3.5 h-3.5" />
           <span className="tracking-wide uppercase text-[11px]">Engineering Philosophy & Stack</span>
         </div>
 
-        <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.04em] text-ink leading-[1.05]">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.04em] text-ink leading-[1.05]">
           Architecting systems with depth.
         </h2>
 
-        <p className="mt-4 text-base sm:text-lg text-muted max-w-3xl leading-relaxed">
+        <p className="mt-3 text-sm sm:text-base text-muted max-w-3xl leading-relaxed">
           Full-stack software engineer with hands-on production experience designing <strong className="text-ink font-semibold">Node.js backend architectures</strong>, RESTful microservices, and <strong className="text-ink font-semibold">production Agentic AI & RAG workflows</strong> that solve real-world problems.
         </p>
       </div>
@@ -45,7 +45,7 @@ export function AboutSection() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
         
         {/* Bento Box 1: Large Node.js Backend Card (Col 8) */}
-        <div className="md:col-span-12 lg:col-span-8 group relative rounded-3xl backdrop-blur-xl bg-white/75 dark:bg-[#121218]/80 border border-black/[0.06] dark:border-white/10 p-7 sm:p-9 shadow-sm hover:border-accent/40 hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div className="md:col-span-12 lg:col-span-8 group relative rounded-3xl backdrop-blur-xl bg-white/75 dark:bg-[#121218]/80 border border-black/[0.06] dark:border-white/10 p-6 sm:p-8 shadow-sm hover:border-accent/40 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300 flex flex-col justify-between overflow-hidden">
           <div className="relative z-10 space-y-4">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2.5">
@@ -234,7 +234,7 @@ export function AboutSection() {
         <div className="md:col-span-12 lg:col-span-4 group relative rounded-3xl backdrop-blur-xl bg-white/75 dark:bg-[#121218]/80 border border-black/[0.06] dark:border-white/10 p-6 sm:p-7 shadow-sm hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
+              <div className="w-9 h-9 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center">
                 <GraduationCap className="w-4 h-4" />
               </div>
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold border border-emerald-500/20">

@@ -1,36 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Default: Crisp Editorial Light Theme */
-  --color-bg: #F5F4F0;
-  --color-ink: #121216;
-  --color-text: #121216;
-  --color-muted: #6B6A75;
-  --color-line: rgba(18, 18, 22, 0.08);
-  --color-accent: #F95700;
-  --color-accent-glow: rgba(249, 87, 0, 0.25);
+  /* Default: Crisp Editorial Gallery Light Theme - Electric Cobalt Blue */
+  --color-bg: #F8F8F6;
+  --color-ink: #0E0E11;
+  --color-text: #0E0E11;
+  --color-muted: #64636E;
+  --color-line: rgba(14, 14, 17, 0.08);
+  --color-accent: #2563EB;
+  --color-accent-blue: #2563EB;
+  --color-accent-glow: rgba(37, 99, 235, 0.22);
 }
 
 [data-theme="light"] {
-  --color-bg: #F5F4F0;
-  --color-ink: #121216;
-  --color-text: #121216;
-  --color-muted: #6B6A75;
-  --color-line: rgba(18, 18, 22, 0.08);
-  --color-accent: #F95700;
-  --color-accent-glow: rgba(249, 87, 0, 0.25);
+  --color-bg: #F8F8F6;
+  --color-ink: #0E0E11;
+  --color-text: #0E0E11;
+  --color-muted: #64636E;
+  --color-line: rgba(14, 14, 17, 0.08);
+  --color-accent: #2563EB;
+  --color-accent-blue: #2563EB;
+  --color-accent-glow: rgba(37, 99, 235, 0.22);
 }
 
 [data-theme="dark"] {
-  --color-bg: #0E0E12;
-  --color-ink: #ECEBE7;
-  --color-text: #ECEBE7;
-  --color-muted: #8B8B95;
-  --color-line: rgba(236, 235, 231, 0.09);
-  --color-accent: #FF7A00;
-  --color-accent-glow: rgba(255, 122, 0, 0.35);
+  --color-bg: #0A0A0E;
+  --color-ink: #F4F4F7;
+  --color-text: #F4F4F7;
+  --color-muted: #9594A0;
+  --color-line: rgba(244, 244, 247, 0.08);
+  --color-accent: #3B82F6;
+  --color-accent-blue: #60A5FA;
+  --color-accent-glow: rgba(59, 130, 246, 0.35);
 }
 
 * {
@@ -43,7 +47,7 @@ html, body {
   overflow-x: hidden;
   background-color: var(--color-bg);
   color: var(--color-ink);
-  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

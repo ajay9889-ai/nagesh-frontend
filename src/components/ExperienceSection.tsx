@@ -7,7 +7,7 @@ export function ExperienceSection() {
   const education = TIMELINE.filter((item) => item.type === 'education');
 
   return (
-    <section id="experience" className="py-14 sm:py-20 px-6 sm:px-10 max-w-7xl mx-auto hairline-b">
+    <section id="experience" className="py-12 sm:py-16 px-6 sm:px-10 max-w-7xl mx-auto hairline-b min-h-screen flex flex-col justify-center">
       <div className="mb-12">
         <span className="text-xs uppercase tracking-widest text-muted font-mono mb-3 block">
           journey

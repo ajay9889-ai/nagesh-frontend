@@ -2,71 +2,58 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, MapPin, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { HeroPortrait } from './HeroPortrait';
 
 export function HeroSection() {
   return (
-    <section className="relative w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen flex items-center justify-center px-4 xs:px-6 sm:px-10 lg:px-14 xl:px-16 max-w-[1440px] mx-auto pt-20 sm:pt-28 lg:pt-32 pb-8 sm:pb-16 overflow-hidden">
-      {/* 2-Column Editorial Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 xl:gap-16 items-center w-full my-auto">
-        {/* Left Column: Heading, Bio & CTAs */}
-        <div className="lg:col-span-7 xl:col-span-7 space-y-3.5 sm:space-y-6 lg:space-y-7 z-10 text-left">
-
-          {/* 1. Status Pill */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="tracking-wide uppercase text-[11px]">Available for AI & Full-Stack Roles</span>
-          </div>
-
-          {/* 2. Role Tracker */}
-          <span className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.2em] text-muted/80 font-mono block">
-            FULL-STACK DEVELOPER &bull; MACHINE LEARNING &bull; LLMs &bull; AGENTIC AI
-          </span>
-
-          {/* 3. Main Headline */}
-          <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold tracking-[-0.035em] text-ink leading-[1.04] break-words">
-            Hi, I&apos;m{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-amber-400 to-orange-400">
-              Nagesha R
-            </span>
+    <section className="relative w-full min-h-[calc(100dvh-4rem)] lg:h-[calc(100dvh-4rem)] flex items-center px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto pt-16 pb-6 overflow-hidden">
+      
+      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12 w-full my-auto">
+        
+        {/* Left Column: Bold, simple, clean headline + subtitle + buttons (Col 7) */}
+        <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6 sm:space-y-7 z-10">
+          
+          {/* Monumental Headline: Syne ExtraBold 800 - "I build things that work." */}
+          <h1 className="font-display font-extrabold text-[clamp(3.5rem,7.5vw,7.5rem)] tracking-[-0.04em] text-ink leading-[0.9] select-none">
+            I build<br />
+            things<br />
+            that<br />
+            <span className="text-[#2563EB] dark:text-[#3B82F6]">work.</span>
           </h1>
 
-          {/* 4. Subtext / Bio */}
-          <p className="text-sm sm:text-lg lg:text-xl text-muted/90 font-normal max-w-xl xl:max-w-2xl leading-relaxed">
-            Software engineer with hands-on, production experience spanning machine learning, deep learning, LLM engineering, RAG, agentic AI workflows, and full-stack backend systems.
+          {/* Clean, single-line subtitle */}
+          <p className="text-sm sm:text-base md:text-lg text-muted font-medium tracking-tight">
+            Nagesha R <span className="text-muted/40 mx-2">•</span> Full-Stack Developer &amp; AI Systems Engineer
           </p>
 
-          {/* 5. Location Tag */}
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-mono text-muted/80 pt-0.5">
-            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent shrink-0" />
-            <span>Bangalore, India</span>
-          </div>
-
-          {/* 6. Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-3">
+          {/* Clean, sleek actions */}
+          <div className="flex items-center gap-4 pt-1">
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full bg-accent hover:bg-accent/90 text-white font-medium text-xs sm:text-sm md:text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 shadow-accent/25"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-accent hover:bg-blue-700 text-white font-medium text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl shadow-blue-900/25 active:translate-y-0"
             >
               <span>Let&apos;s talk</span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="#work"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full border border-line hover:border-ink/40 bg-bg/40 backdrop-blur-sm text-ink font-medium text-xs sm:text-sm md:text-base transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-line hover:border-ink/40 bg-bg/60 backdrop-blur-sm text-ink font-medium text-sm transition-all duration-200 hover:-translate-y-0.5"
             >
-              <span>Explore AI projects</span>
-              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70" />
+              <span>View work</span>
+              <ArrowUpRight className="w-4 h-4 opacity-70" />
             </Link>
           </div>
+
         </div>
 
-        {/* Right Column: Cosmic Orb + Portrait + Signature + Bullets */}
-        <div className="lg:col-span-5 xl:col-span-5 w-full flex items-center justify-center relative mt-2 lg:mt-0">
+        {/* Right Column: Clean image, no text boxes (Col 5) */}
+        <div className="lg:col-span-5 flex items-center justify-center lg:justify-end relative">
           <HeroPortrait />
         </div>
+
       </div>
+
     </section>
   );
 }

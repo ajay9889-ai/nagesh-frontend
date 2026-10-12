@@ -65,7 +65,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-accent to-[#FF9028] hover:brightness-110 active:scale-95 transition-all shadow-md shadow-orange-500/20"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-accent to-pink-600 hover:brightness-110 active:scale-95 transition-all shadow-md shadow-rose-500/20"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Launch Live App</span>

@@ -3,7 +3,7 @@ import { SKILL_GROUPS } from '@/data/portfolioData';
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-14 sm:py-20 px-6 sm:px-10 max-w-7xl mx-auto hairline-b">
+    <section id="skills" className="py-12 sm:py-16 px-6 sm:px-10 max-w-7xl mx-auto hairline-b min-h-screen flex flex-col justify-center">
       <div className="mb-10">
         <span className="text-xs uppercase tracking-widest text-muted font-mono mb-3 block">
           capabilities

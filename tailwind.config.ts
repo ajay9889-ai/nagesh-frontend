@@ -31,7 +31,8 @@ const config: Config = {
       fontFamily: {
         display: ["'Syne'", "sans-serif"],
         heading: ["'Syne'", "sans-serif"],
-        body: ["'Instrument Sans'", "sans-serif"],
+        body: ["'DM Sans'", "'Inter'", "sans-serif"],
+        mono: ["'JetBrains Mono'", "monospace"],
         signature: ["'Caveat'", "cursive"],
       },
       letterSpacing: {

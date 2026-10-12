@@ -29,15 +29,15 @@ export function LiveProjectsSection() {
   };
 
   return (
-    <section id="live-projects" className="py-16 sm:py-24 px-6 sm:px-10 max-w-7xl mx-auto hairline-b relative">
+    <section id="live-projects" className="py-12 sm:py-16 px-6 sm:px-10 max-w-7xl mx-auto hairline-b relative min-h-screen flex flex-col justify-center">
       {/* Background ambient decorative glow */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-accent/10 via-emerald-500/5 to-transparent blur-[120px] pointer-events-none rounded-full" 
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-accent/10 via-rose-500/5 to-transparent blur-[120px] pointer-events-none rounded-full" 
       />
 
       {/* Section Header */}
-      <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+      <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/25 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-medium mb-3">
             <span className="relative flex h-2 w-2">
@@ -62,7 +62,7 @@ export function LiveProjectsSection() {
         {LIVE_PROJECTS.map((project) => (
           <div
             key={project.id}
-            className="group relative flex flex-col rounded-3xl backdrop-blur-2xl bg-white/70 dark:bg-[#121218]/80 border border-white/60 dark:border-white/10 shadow-[0_12px_40px_0_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.4)] dark:shadow-[0_12px_40px_0_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.05)] hover:border-accent/50 dark:hover:border-accent/40 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-400 overflow-hidden"
+            className="group relative flex flex-col rounded-3xl backdrop-blur-2xl bg-white/70 dark:bg-[#121218]/80 border border-white/60 dark:border-white/10 shadow-[0_12px_40px_0_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.4)] dark:shadow-[0_12px_40px_0_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.05)] hover:border-accent/50 dark:hover:border-accent/40 hover:shadow-2xl hover:shadow-rose-500/10 transition-all duration-400 overflow-hidden"
           >
             {/* Top Browser Chrome Bar */}
             <div className="px-4 py-2.5 bg-black/[0.03] dark:bg-white/[0.03] border-b border-black/[0.05] dark:border-white/[0.05] flex items-center justify-between gap-2">
@@ -169,7 +169,7 @@ export function LiveProjectsSection() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-2.5 px-3.5 rounded-xl text-xs font-medium text-white bg-gradient-to-r from-accent to-[#FF9028] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 shadow-md shadow-orange-500/20 group/btn"
+                      className="flex-1 py-2.5 px-3.5 rounded-xl text-xs font-medium text-white bg-gradient-to-r from-accent to-pink-600 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 shadow-md shadow-rose-500/20 group/btn"
                     >
                       <Globe className="w-3.5 h-3.5" />
                       <span>Launch Live App</span>

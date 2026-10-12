@@ -4,7 +4,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
 export function HeroPortrait() {
-  const [mousePos, setMousePos] = useState({ x: 160, y: 140 });
+  const [mousePos, setMousePos] = useState({ x: 160, y: 160 });
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -33,14 +33,20 @@ export function HeroPortrait() {
   const revealMask = `radial-gradient(circle 220px at ${mousePos.x}px ${mousePos.y}px, black 35%, rgba(0,0,0,0.5) 65%, transparent 100%)`;
 
   return (
-    <div className="relative w-full max-w-[320px] xs:max-w-[360px] sm:max-w-[460px] lg:max-w-[560px] xl:max-w-[640px] mx-auto flex items-center justify-center select-none my-2 sm:my-0">
-      {/* 1. Behind: Theme-Aware Soft Solar Amber / Orange Orb Backdrop */}
+    <div className="relative w-full max-w-md mx-auto flex items-center justify-center select-none py-1">
+      {/* 1. Behind: Soft Ambient Electric Blue Spotlight Halo */}
       <div 
         aria-hidden="true"
-        className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 w-[230px] h-[230px] xs:w-[270px] xs:h-[270px] sm:w-[360px] sm:h-[360px] lg:w-[440px] lg:h-[440px] xl:w-[480px] xl:h-[480px] rounded-full bg-gradient-to-tr from-orange-200/40 via-amber-100/30 to-orange-100/20 border border-orange-200/40 dark:from-[#2A1605]/90 dark:via-[#3D1E04]/70 dark:to-[#5E2B06]/40 dark:border-orange-500/20 blur-[1px] pointer-events-none transition-colors duration-400"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] xs:w-[300px] sm:w-[360px] lg:w-[420px] h-[260px] xs:h-[300px] sm:h-[360px] lg:h-[420px] rounded-full bg-gradient-to-tr from-blue-600/25 via-sky-400/15 to-transparent border border-blue-400/25 dark:from-[#0B1A3D]/90 dark:via-[#081229]/70 dark:to-transparent dark:border-blue-500/20 blur-[2px] pointer-events-none transition-colors duration-400"
       />
 
-      {/* 2. Interactive Portrait Layer (100% Transparent Cutout with Cursor Color Reveal) */}
+      {/* Ambient soft blue glow */}
+      <div 
+        aria-hidden="true"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[420px] h-[300px] sm:h-[420px] bg-blue-500/10 dark:bg-blue-500/15 blur-[90px] rounded-full pointer-events-none"
+      />
+
+      {/* 2. Center: Interactive Transparent Portrait */}
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
@@ -48,10 +54,10 @@ export function HeroPortrait() {
         onMouseLeave={() => setIsHovered(false)}
         onTouchMove={handleTouchMove}
         onTouchStart={() => setIsHovered(true)}
-        className="relative z-10 w-[260px] xs:w-[300px] sm:w-[380px] lg:w-[440px] xl:w-[480px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y"
+        className="relative z-10 w-[240px] xs:w-[270px] sm:w-[310px] lg:w-[340px] xl:w-[380px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y"
         style={{
-          maskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
         }}
       >
         {/* BASE: Black & White Transparent Portrait (Default state) */}
@@ -88,39 +94,9 @@ export function HeroPortrait() {
         </div>
       </div>
 
-      {/* 3. Floating Right Badge: Curved Arrow & Bullet Points (Hidden on small screens) */}
-      <div className="absolute top-12 sm:top-18 -right-2 sm:-right-6 lg:-right-8 xl:-right-10 z-20 hidden sm:flex items-start gap-2.5 pointer-events-none">
-        {/* Curved Hand-Drawn Style Arrow */}
-        <svg 
-          className="w-8 h-8 sm:w-9 sm:h-9 text-muted/60 mt-1 shrink-0 -rotate-6" 
-          viewBox="0 0 40 40" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="1.5"
-        >
-          <path d="M 6 26 C 14 12, 24 10, 34 16" strokeLinecap="round" />
-          <path d="M 28 13 L 34 16 L 31 22" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-
-        <ul className="space-y-2 text-xs sm:text-sm font-mono text-ink/90 bg-bg/85 dark:bg-[#121218]/85 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-line shadow-md">
-          <li className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>AI Systems & LLMs</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>Full-Stack Engineer</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>LangGraph & RAG</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* 4. Cursive Script Signature: Nagesha R */}
-      <div className="absolute bottom-6 xs:bottom-8 sm:bottom-12 right-1 xs:right-2 sm:right-4 z-20 pointer-events-none -rotate-6">
-        <span className="font-signature text-3xl xs:text-4xl sm:text-6xl lg:text-7xl text-ink dark:text-white/95 font-medium tracking-wide drop-shadow-md">
+      {/* 5. Cursive Script Signature: Nagesha R */}
+      <div className="absolute bottom-2 right-2 sm:right-6 z-20 pointer-events-none -rotate-6">
+        <span className="font-signature text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-ink/90 dark:text-white/95 font-medium tracking-wide drop-shadow-md">
           Nagesha R
         </span>
       </div>

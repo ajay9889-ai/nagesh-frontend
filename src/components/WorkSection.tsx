@@ -6,7 +6,7 @@ import { ProjectReactions } from '@/components/ProjectReactions';
 
 export function WorkSection() {
   return (
-    <section id="work" className="py-14 sm:py-20 px-6 sm:px-10 max-w-7xl mx-auto hairline-b">
+    <section id="work" className="py-12 sm:py-16 px-6 sm:px-10 max-w-7xl mx-auto hairline-b min-h-screen flex flex-col justify-center">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
         <div>
           <span className="text-xs uppercase tracking-widest text-muted font-mono mb-3 block">

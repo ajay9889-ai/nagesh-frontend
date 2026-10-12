@@ -83,7 +83,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-14 sm:py-20 px-6 sm:px-10 max-w-7xl mx-auto hairline-b">
+    <section id="contact" className="py-12 sm:py-16 px-6 sm:px-10 max-w-7xl mx-auto hairline-b min-h-screen flex flex-col justify-center">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         {/* Left Column */}
         <div className="lg:col-span-5 space-y-6">
