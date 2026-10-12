@@ -7,19 +7,17 @@ import { HeroPortrait } from './HeroPortrait';
 
 export function HeroSection() {
   return (
-    <section className="relative w-full h-[100dvh] min-h-[620px] flex items-center px-6 sm:px-10 lg:px-14 xl:px-16 max-w-[1440px] mx-auto pt-16 pb-4 overflow-hidden">
+    <section className="relative w-full h-[100dvh] max-h-[100dvh] flex items-center pl-6 sm:pl-10 lg:pl-14 xl:pl-20 pr-0 overflow-hidden">
       
-      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-8 w-full h-full my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-4 w-full h-full my-auto">
         
         {/* Left Column: Bold, simple, clean headline + subtitle + buttons (Col 5) */}
-        <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center text-left space-y-6 sm:space-y-8 z-10 py-4">
+        <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center text-left space-y-6 sm:space-y-8 z-10 py-4 max-w-xl">
           
-          {/* Monumental Headline: Syne ExtraBold 800 - "I build things that work." */}
-          <h1 className="font-display font-extrabold text-[clamp(3rem,5.8vw,5.75rem)] tracking-[-0.04em] text-ink leading-[0.91] select-none">
-            I build<br />
-            things<br />
-            that<br />
-            <span className="text-[#2563EB] dark:text-[#3B82F6]">work.</span>
+          {/* Monumental Headline: Syne ExtraBold 800 - Exactly Two Lines */}
+          <h1 className="font-display font-extrabold text-[clamp(2.5rem,4.6vw,5.2rem)] tracking-[-0.035em] text-ink leading-[0.96] select-none whitespace-nowrap">
+            I build things<br />
+            that <span className="text-[#2563EB] dark:text-[#3B82F6]">work.</span>
           </h1>
 
           {/* Clean, single-line subtitle */}
@@ -47,8 +45,8 @@ export function HeroSection() {
 
         </div>
 
-        {/* Right Column: Prominent, Expanded Portrait Image (Col 7) */}
-        <div className="lg:col-span-7 xl:col-span-7 flex items-center justify-center lg:justify-end relative h-full">
+        {/* Right Column: Prominent, Expanded Portrait Image Flush to Right Edge (Col 7) */}
+        <div className="lg:col-span-7 xl:col-span-7 flex items-end justify-end relative h-full pr-0 mr-0 overflow-hidden">
           <HeroPortrait />
         </div>
 
