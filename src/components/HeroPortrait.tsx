@@ -34,13 +34,13 @@ export function HeroPortrait() {
 
   return (
     <div className="relative w-full max-w-[320px] xs:max-w-[360px] sm:max-w-[460px] lg:max-w-[560px] xl:max-w-[640px] mx-auto flex items-center justify-center select-none my-2 sm:my-0">
-      {/* 1. Behind: Theme-Aware Soft Solar Amber / Orange Glow Backdrop */}
+      {/* 1. Behind: Theme-Aware Soft Solar Amber / Orange Orb Backdrop */}
       <div 
         aria-hidden="true"
-        className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 w-[240px] h-[240px] xs:w-[280px] xs:h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] rounded-full bg-gradient-to-tr from-amber-500/25 via-orange-400/20 to-amber-200/10 dark:from-orange-600/20 dark:via-amber-500/15 dark:to-transparent blur-[80px] pointer-events-none transition-colors duration-400"
+        className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 w-[230px] h-[230px] xs:w-[270px] xs:h-[270px] sm:w-[360px] sm:h-[360px] lg:w-[440px] lg:h-[440px] xl:w-[480px] xl:h-[480px] rounded-full bg-gradient-to-tr from-orange-200/40 via-amber-100/30 to-orange-100/20 border border-orange-200/40 dark:from-[#2A1605]/90 dark:via-[#3D1E04]/70 dark:to-[#5E2B06]/40 dark:border-orange-500/20 blur-[1px] pointer-events-none transition-colors duration-400"
       />
 
-      {/* 2. Interactive Portrait Layer (Nagesha R Studio Portrait with Cursor Color Reveal) */}
+      {/* 2. Interactive Portrait Layer (100% Transparent Cutout with Cursor Color Reveal) */}
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
@@ -48,28 +48,28 @@ export function HeroPortrait() {
         onMouseLeave={() => setIsHovered(false)}
         onTouchMove={handleTouchMove}
         onTouchStart={() => setIsHovered(true)}
-        className="relative z-10 w-[260px] xs:w-[300px] sm:w-[360px] lg:w-[420px] xl:w-[460px] aspect-[2/3] rounded-[28px] sm:rounded-[36px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl shadow-orange-950/20 cursor-pointer touch-pan-y group"
+        className="relative z-10 w-[260px] xs:w-[300px] sm:w-[380px] lg:w-[440px] xl:w-[480px] aspect-[2/3] cursor-pointer overflow-hidden touch-pan-y"
         style={{
-          maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
         }}
       >
-        {/* BASE: Black & White Studio Portrait (Default state) */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none">
+        {/* BASE: Black & White Transparent Portrait (Default state) */}
+        <div className="absolute inset-0 w-full h-full flex items-end justify-center pointer-events-none">
           <Image
-            src="/nagesh-studio-bw.jpg"
-            alt="Nagesha R - AI & Full-Stack Software Engineer"
-            width={682}
-            height={1024}
+            src="/nagesh-portrait-bw.png"
+            alt="Nagesha R - High-Definition Monochrome Cutout"
+            width={1024}
+            height={1536}
             priority
             quality={95}
-            className="w-full h-full object-cover object-top select-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            className="w-full h-full object-contain object-bottom select-none drop-shadow-2xl"
           />
         </div>
 
         {/* TOP LAYER: Color Image ONLY revealed as cursor/touch moves over the image */}
         <div 
-          className="absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-300 ease-out"
+          className="absolute inset-0 w-full h-full flex items-end justify-center pointer-events-none transition-opacity duration-300 ease-out"
           style={{
             opacity: isHovered ? 1 : 0,
             maskImage: revealMask,
@@ -77,13 +77,13 @@ export function HeroPortrait() {
           }}
         >
           <Image
-            src="/nagesh-studio-color.jpg"
-            alt="Nagesha R - AI & Full-Stack Software Engineer"
-            width={682}
-            height={1024}
+            src="/file_00000000a91482438dbb6902ecd6351b.png"
+            alt="Nagesha R - High-Definition Color Cutout"
+            width={1024}
+            height={1536}
             priority
             quality={95}
-            className="w-full h-full object-cover object-top select-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            className="w-full h-full object-contain object-bottom select-none drop-shadow-2xl"
           />
         </div>
       </div>
